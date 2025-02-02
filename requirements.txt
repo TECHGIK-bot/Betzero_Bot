@@ -30,8 +30,6 @@ Pygments==2.19.1
 pyinstaller==6.11.1
 pyinstaller-hooks-contrib==2025.1
 pyparsing==3.2.1
-pypiwin32==223
-PySocks==1.7.1
 requests==2.32.3
 requests-oauthlib==2.0.0
 rsa==4.9
