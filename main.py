@@ -12,8 +12,13 @@ CHAT_ID = "6260151149"
 
 from webdriver_manager.chrome import ChromeDriverManager
 
-# Use WebDriver Manager to install the latest driver
-driver = webdriver.Chrome(ChromeDriverManager().install())
+options = webdriver.ChromeOptions()
+options.add_argument("--headless")  # Run in headless mode
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+
+# WebDriver Manager automatically installs the correct ChromeDriver version
+driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 
 # Open the website
 driver.get('https://logigames.bet9ja.com/Games/Launcher?gameId=11000&provider=0&pff=1&skin=201')
