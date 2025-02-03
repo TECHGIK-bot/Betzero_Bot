@@ -11,12 +11,15 @@ import requests
 BOT_TOKEN = "7057194211:AAF_StFo_FwRn1AR_XOJQurXuYgh5ZvO2b4"
 CHAT_ID = "6260151149"
 
-
-
 options = webdriver.ChromeOptions()
-options.add_argument("--headless")  # Run in headless mode
+options.add_argument("--headless")
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
+
+# Initialize driver with Service object
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service, options=options)
+
 
 # Correct driver initialization
 driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
