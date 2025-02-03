@@ -16,9 +16,15 @@ options.add_argument("--headless")
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 
+# Specify the path to the Chrome binary installed in your Render environment
+options.binary_location = "/usr/bin/google-chrome-stable"  # Path to Chrome binary on Render
+
 # Initialize driver with Service object
 service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service, options=options)
+
+# Add your bot functionality below
+
 
 
 # Correct driver initialization
