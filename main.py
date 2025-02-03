@@ -1,4 +1,5 @@
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -10,15 +11,16 @@ import requests
 BOT_TOKEN = "7057194211:AAF_StFo_FwRn1AR_XOJQurXuYgh5ZvO2b4"
 CHAT_ID = "6260151149"
 
-from webdriver_manager.chrome import ChromeDriverManager
+
 
 options = webdriver.ChromeOptions()
 options.add_argument("--headless")  # Run in headless mode
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 
-# WebDriver Manager automatically installs the correct ChromeDriver version
+# Correct driver initialization
 driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+
 
 # Open the website
 driver.get('https://logigames.bet9ja.com/Games/Launcher?gameId=11000&provider=0&pff=1&skin=201')
