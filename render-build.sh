@@ -1,13 +1,11 @@
-#!/usr/bin/env bash
-# Update package lists
-sudo apt-get update
+#!/bin/bash
 
-# Install Chrome
-wget -qO- https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb > chrome.deb
-sudo dpkg -i chrome.deb
+# Install Google Chrome (no need for sudo)
+wget -q -O chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+apt-get update && apt-get install -y ./chrome.deb
 rm chrome.deb
-sudo apt-get --fix-broken install -y
 
-# Install Chromedriver
-CHROME_VERSION=$(google-chrome --version | grep -oP '[0-9]+(\.[0-9]+)*')
+# Install ChromeDriver using WebDriver Manager (recommended)
+pip install selenium webdriver-manager
 
+echo "Setup complete!"
